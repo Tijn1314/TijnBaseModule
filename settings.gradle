@@ -12,3 +12,4 @@ dependencyResolutionManagement {
 rootProject.name = "TijnBaseModule"
 include ':app'
 include ':Imageloader'
+include ':NetLibrary'
