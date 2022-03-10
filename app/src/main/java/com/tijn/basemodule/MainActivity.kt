@@ -1,17 +1,18 @@
 package com.tijn.basemodule
 
-import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.tijn.basemodule.R.layout.activity_main
+import com.tijn.basemodule.home.Banner
+import com.tijn.basemodule.home.HomeViewModel
 import com.tijn.imageloader.ImageLoader
-import com.tijn.imageloader.base.ImageBuilder
-import com.tijn.imageloader.listeners.SourceReadyListener
-import com.tijn.imageloader.okhttp.ProgressInterceptor
 import com.tijn.imageloader.listeners.ProgressListener
+import com.tijn.imageloader.okhttp.ProgressInterceptor
+import kotlin.reflect.KClass
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(activity_main)
         iv = findViewById(R.id.img)
+        initData()
+
+
+
         ProgressInterceptor.addListener(gifUrl, object : ProgressListener {
             override fun onProgress(progress: Int) {
                 Log.e("MainImg", progress.toString())
@@ -61,5 +66,19 @@ class MainActivity : AppCompatActivity() {
 //            }
 //
 //        })
+    }
+
+    private val viewModel: HomeViewModel by lazy {
+        ViewModelProvider(this).get(HomeViewModel::class.java)
+    }
+    fun initData() {
+        viewModel.apply { getBanner() }
+
+        viewModel.getBannerLiveData()
+            .observe(this,
+                Observer<List<Banner>> {
+                    Log.e("aaa", it.toString())
+                })
+
     }
 }

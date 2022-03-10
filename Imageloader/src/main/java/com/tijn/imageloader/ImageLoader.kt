@@ -88,10 +88,9 @@ object ImageLoader {
     }
 
 
-    fun setImageLoaderStrategy(imageLoaderStrategy: BaseImageLoaderStrategy) {
-        if (imageLoaderStrategy == null) {
-            return
+    fun setImageLoaderStrategy(imageLoaderStrategy: BaseImageLoaderStrategy?) {
+        imageLoaderStrategy?.let {
+            strategy = it
         }
-        strategy = imageLoaderStrategy
     }
 }
