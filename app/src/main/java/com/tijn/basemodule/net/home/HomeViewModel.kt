@@ -1,6 +1,5 @@
-package com.tijn.basemodule.home
+package com.tijn.basemodule.net.home
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

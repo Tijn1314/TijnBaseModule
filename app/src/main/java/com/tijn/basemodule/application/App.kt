@@ -1,6 +1,7 @@
 package com.tijn.basemodule.application
 
 import android.app.Application
+import com.tijn.netlibrary.NetConfig
 
 
 /**
@@ -11,7 +12,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-
+        NetConfig.initNet(this)
 
     }
 }

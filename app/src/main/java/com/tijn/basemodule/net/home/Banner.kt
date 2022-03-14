@@ -1,4 +1,4 @@
-package com.tijn.basemodule.home
+package com.tijn.basemodule.net.home
 
 data class Banner(val desc: String,
                   val id: Int,

@@ -1,4 +1,4 @@
-package com.tijn.basemodule.home
+package com.tijn.basemodule.net.home
 
 import com.tijn.netlibrary.model.BaseModel
 import retrofit2.http.GET

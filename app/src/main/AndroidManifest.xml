@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".imageloader.ImageLoaderActivity"/>
+        <activity android:name=".net.home.HomeActivity"/>
+        <activity android:name=".net.download.DownloadActivity"/>
     </application>
 
 </manifest>

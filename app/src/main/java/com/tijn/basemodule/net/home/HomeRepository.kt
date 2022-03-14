@@ -1,4 +1,4 @@
-package com.tijn.basemodule.home
+package com.tijn.basemodule.net.home
 
 import com.tijn.netlibrary.model.NetResult
 import com.tijn.netlibrary.net.BaseRepository
