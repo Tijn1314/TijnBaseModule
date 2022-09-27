@@ -3,27 +3,26 @@ package com.tijn.basemodule
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.tijn.basemodule.R.layout.activity_main
+import com.tijn.basemodule.bean.BindingEntry
+import com.tijn.basemodule.databinding.ActivityMainBinding
 import com.tijn.basemodule.imageloader.ImageLoaderActivity
 import com.tijn.basemodule.net.download.DownloadActivity
 import com.tijn.basemodule.net.home.HomeActivity
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private val imageLoaderActivity: TextView by lazy { findViewById(R.id.imageLoaderActivity) }
-    private val homeActivity: TextView by lazy { findViewById(R.id.homeActivity) }
-    private val downloadActivity: TextView by lazy { findViewById(R.id.downloadActivity) }
-
+    var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
-        imageLoaderActivity.setOnClickListener(this)
-        homeActivity.setOnClickListener(this)
-        downloadActivity.setOnClickListener(this)
 
+        binding?.bindingEntry = BindingEntry("Aaaaaa")
+        binding?.imageLoaderActivity?.setOnClickListener(this)
+        binding?.homeActivity?.setOnClickListener(this)
+        binding?.downloadActivity?.setOnClickListener(this)
 
     }
 

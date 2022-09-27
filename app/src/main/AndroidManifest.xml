@@ -23,6 +23,7 @@
         <activity android:name=".imageloader.ImageLoaderActivity"/>
         <activity android:name=".net.home.HomeActivity"/>
         <activity android:name=".net.download.DownloadActivity"/>
+        <activity android:name=".mvi.MviActivity"/>
     </application>
 
 </manifest>

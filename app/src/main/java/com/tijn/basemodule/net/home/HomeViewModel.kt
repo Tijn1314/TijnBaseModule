@@ -8,11 +8,9 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
     private val homeRepository= HomeRepository()
-    private val bannerLiveData = MutableLiveData<List<Banner>>()
+    private val _bannerLiveData = MutableLiveData<List<Banner>>()
+    val bannerLiveData = _bannerLiveData
 
-    fun getBannerLiveData(): MutableLiveData<List<Banner>> {
-        return bannerLiveData
-    }
 
 
     fun getBanner() {
